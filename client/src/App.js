@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
+import {Routes, Route} from 'react-router-dom'
+import CustomerForm from './components/CustomerForm'; 
+import DisplayAllCustomers from './components/DisplayAllCustomers';
+import Nav from './components/Nav';
+
 
 function App() {
+
+  const [allCustomers, setAllCustomers] = useState([]) 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+    <Nav/>
+    <Routes>
+    <Route path='/' element= {<DisplayAllCustomers allCustomers={allCustomers} setAllCustomers={setAllCustomers}/> }/>
+  
+    <Route path='/customerForm' element={<CustomerForm allCustomers={allCustomers} setAllCustomers={setAllCustomers}/>}/> 
+  </Routes>
+
+    
+
+    
     </div>
   );
 }

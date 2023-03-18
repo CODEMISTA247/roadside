@@ -18,7 +18,7 @@ const CustomerSchema = new mongoose.Schema({
         type: String,
         required: true,
         minLength: [10, 'Description must be at least 10 characters long'],
-        //maxLength: [45, 'Description must not be more than 45 characters long']
+        maxLength: [45, 'Description must not be more than 45 characters long']
     },
     typeService:{
         type:String,
