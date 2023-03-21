@@ -1,5 +1,4 @@
 const Customer = require('../models/customer')
-
 module.exports = {
 
     allCustomers: (req, res) => {
@@ -12,6 +11,8 @@ module.exports = {
                 res.status(500).json(err)
             })
     },
+
+    
     getOneCustomer: (req, res) => {
         Customer.findOne({ _id: req.params.id})
             .then((oneCustomer) => {

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios'
 import {useNavigate, Link} from 'react-router-dom'
+import logo from '../components/images/logo.png'
 
 const CustomerForm = (props) => {
     const navigate = useNavigate()
@@ -12,7 +13,7 @@ const CustomerForm = (props) => {
         location: '' , 
         description: '', 
         typeService: 'Jumpstart',
-        phoneNumber: 0,
+        phoneNumber: 18000000000,
     }) 
 
 
@@ -32,19 +33,21 @@ const CustomerForm = (props) => {
             })
             .catch((err) => {
                 console.log(err);
-                // console.log(err.response.data.error.errors);
                 setErrors(err.response.data.errors);
+                // console.log(err.response.data.error.errors);
+                
             })
     }
 
 
     return (
-        <div className='d-flex justify-content-evenly'>
-        
-        <h1 className='text-dark'>Need Roadside Assistance?</h1>
+        <div className='d-block justify-content-evenly'>
 
-        <form className='w-15 text-dark row g-2' onSubmit={submitHandler}>
-            <label className='form-label'>Name:</label>
+        
+        <h2 className='p-3 text-light  w-50 text-bg-secondary border-5 border-light rounded-3'>Need Roadside Assistance? <img style={{width:'80px', borderRadius:'30px'}} src={logo} alt="This Logo"/> </h2>
+
+        <form className='border-5 m-auto w-50 row g-2 text-light rounded-3' onSubmit={submitHandler}>
+            <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>Name:</label>
             <input className='form-control' type='text' value={customer.customerName} name='customerName' onChange={handleChange}/>
 
             {
@@ -53,7 +56,7 @@ const CustomerForm = (props) => {
                 null
             }
 
-            <label className='form-label'>Location:</label>
+            <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>Location:</label>
             <input className='form-control' type='text' value={customer.location} name='location' onChange={handleChange}/>
 
             {
@@ -62,7 +65,7 @@ const CustomerForm = (props) => {
                 null
             }
 
-            <label className='form-label'>What's going on?</label>
+            <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>What's going on?</label>
             <input className='form-control' type='text' value={customer.description} name='description' onChange={handleChange}/>
 
             {
@@ -71,10 +74,10 @@ const CustomerForm = (props) => {
                 null
             }
 
-            <label className='form-label'>Type of Service:</label>
+            <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>Type of Service:</label>
             <select className="form-select" name="typeService" onChange={handleChange} value={customer.typeService}>
                 <option value="Jumpstart">Jumpstart</option>
-                <option value="Vehicle lockout">Vehicle lockout</option>
+                <option value="Vehicle Lockout">Vehicle lockout</option>
                 <option value="Flat Tire">Flat Tire</option>
                 <option value="Battery Replacement">Battery Replacement</option>
                 <option value="oil change">Oil Change</option>
@@ -87,7 +90,7 @@ const CustomerForm = (props) => {
                 <p className='text-warning'>{errors.typeService.message}</p>:
                 null
             }
-            <label className='form-label'>Phone Number:</label>
+            <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>Contact Information:</label>
             <input className='form-control' type='number' value={customer.phoneNumber} name='phoneNumber' onChange={handleChange}/>
 
             {
@@ -97,9 +100,9 @@ const CustomerForm = (props) => {
             }
             <br/>
             <div>
-                <button className='btn btn-primary'>Submit</button> 
+                <button className='btn btn-danger'>Submit</button> 
                 --
-                <Link to={'/'}>Go Home</Link>
+                <Link to={'/'} className='btn btn-danger'>Go Home</Link>
             </div>
         
         </form> 
