@@ -1,9 +1,15 @@
 .App {
   text-align: auto;
   /* margin-bottom: auto; */
-  background-color: lightgray;
-  height: 1000px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url(/src/components/images/SLIDE3.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+
 
 
 

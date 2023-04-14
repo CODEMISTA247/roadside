@@ -23,7 +23,7 @@ const CustomerSchema = new mongoose.Schema({
     typeService:{
         type:String,
         required: true,
-        enum:{values: ['Jumpstart', 'Vehicle Lockout', 'Flat Tire', 'Battery Replacement', 'oil change', 'Tire Rotation', 'Breaks/Rotors'], message:'Service not in list of acceptable services'}
+        enum:{values: ['Jumpstart', 'Vehicle Lockout', 'Flat Tire', 'Battery Replacement', 'Oil Change', 'Tire Rotation', 'Breaks/Rotors'], message:'Service not in list of acceptable services'}
     },
     phoneNumber:{
         type:Number,

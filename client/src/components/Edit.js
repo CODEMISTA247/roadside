@@ -54,7 +54,7 @@ const UpdateCustomer = (props) => {
         
             <h2 className='p-3 text-light  w-50 text-bg-secondary border-5 border-light rounded-3'>Edit {customerName}'s Service</h2>
             
-            <form className='border-5 m-auto w-50 row g-2 text-light rounded-3' onSubmit={updateCustomer}>
+            <form className='border-5 m-auto w-50 row g-2 text-light rounded-3 user-form' onSubmit={updateCustomer}>
                 <label className='form-label text-bg-secondary text-light w-50'>Name:</label>
                 <input className='form-control' type='text' value={customerName} name='customerName' onChange={(e) =>{ 
                     setCustomerName(e.target.value)}}/>
@@ -85,9 +85,20 @@ const UpdateCustomer = (props) => {
                         null
                     }
 
-                <label className='form-label text-bg-secondary text-light w-50 rounded-3'>Service Type:</label>
+
+                    <label className='form-label text-bg-secondary text-light w-50 rounded-3'>Service Type:</label>
+                    <select className="form-select" name="typeService" onChange={(e) => {setTypeService(e.target.value)}}>
+                        <option value="Jumpstart">Jumpstart</option>
+                        <option value="Vehicle Lockout">Vehicle Lockout</option>
+                        <option value="Flat Tire">Flat Tire</option>
+                        <option value="Battery Replacement">Battery Replacement</option>
+                        <option value="Oil Change">Oil Change</option>
+                        <option value="Tire Rotation">Tire Rotation</option>
+                        <option value="Breaks/Rotors">Breaks/Rotors</option>
+                    </select>
+                {/*<label className='form-label text-bg-secondary text-light w-50 rounded-3'>Service Type:</label>
                 <input className='form-control' type='text' value={typeService} name='typeService' onChange={(e) => {
-                    setTypeService(e.target.value)}}/>
+                setTypeService(e.target.value)}}/>*/}
 
                     {
                         errors.typeService?

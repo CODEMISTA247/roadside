@@ -28,7 +28,7 @@ const CustomerForm = (props) => {
         axios.post('http://localhost:8000/api/postCustomer', customer)
             .then((res) => {
                 setAllCustomers([...allCustomers, res.data])
-                navigate('/')
+                navigate('/dashboard')
                 
             })
             .catch((err) => {
@@ -46,7 +46,7 @@ const CustomerForm = (props) => {
         
         <h2 className='p-3 text-light  w-50 text-bg-secondary border-5 border-light rounded-3'>Need Roadside Assistance? <img style={{width:'80px', borderRadius:'30px'}} src={logo} alt="This Logo"/> </h2>
 
-        <form className='border-5 m-auto w-50 row g-2 text-light rounded-3' onSubmit={submitHandler}>
+        <form className='border-5 m-auto w-50 row g-2 text-light rounded-3 user-form' onSubmit={submitHandler}>
             <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>Name:</label>
             <input className='form-control' type='text' value={customer.customerName} name='customerName' onChange={handleChange}/>
 
