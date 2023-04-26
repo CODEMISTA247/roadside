@@ -30,7 +30,7 @@ const CustomerSchema = new mongoose.Schema({
         required: true,
         minLength:[10, 'Phone number must be at least 10 characters long'],
         maxLength:[45, 'Phone number must not be longer than 20 characters']
-    }
+    },
     
 }, {timestamps:true})
 const Customer = mongoose.model('Customer', CustomerSchema);

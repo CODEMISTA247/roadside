@@ -22,22 +22,25 @@ const OneCustomer = (props) => {
         axios.delete(`http://localhost:8000/api/deleteCustomer/${id}`)
         .then((res) => {
             console.log(res);
-            navigate ("/")
+            navigate ("/dashboard")
         })
     }
 
     return (
-        <div className="card w-75 mb-3  m-auto text-bg-secondary rounded-4">
+        <div className="  card w-75 mb-3  m-auto text-bg-dark ">
     <div className="card-body">
         <h5 className="card-title">Customer Name: {customer.customerName}</h5>
         <hr /> 
         
-        <h6 className="card-subtitle mb-2 text-dark">Service Requested: {customer.typeService}</h6>
-        <p className="card-text">Customer Information: {customer.description}</p>
+        <h6 className="card-subtitle mb-2 text-light">Service Requested: {customer.typeService}</h6>
+        <p className="card-text">Description: {customer.description}</p>
         <p className="card-text">Contact Information: {customer.phoneNumber}</p>
-        <button onClick={deleteCustomer} className="btn btn-danger">Cancel Service</button>
-        --
-        <Link to={'/'}  className='btn btn-danger'>Go Home </Link>
+
+        <div className='justify-content-between w-75  d-flex '>
+        <button onClick={deleteCustomer} className="btn btn-danger btn-outline-light text-dark">Cancel </button>
+        <Link to={'/'}  className='btn btn-secondary btn btn-secondary btn-outline-dark'> Home </Link>
+        </div>
+
     </div>
 </div>
     )

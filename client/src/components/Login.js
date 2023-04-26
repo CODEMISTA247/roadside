@@ -30,8 +30,8 @@ const Login = (props) => {
             })
     }
     return (
-        <div>
-            <h1 className='text-white'>Login</h1> 
+        <div className='bg-img'>
+            <h1 className='text-white title'>Welcome Back!</h1> 
             <form onSubmit={submitHandler} className='col-4 mx-auto user-form mt-5'>
                 <label className='form-label'>Email:</label>
                 <input type="text" name="email" className='form-control' onChange={onChangeHandler} value={userLogin.email}/>
@@ -39,9 +39,9 @@ const Login = (props) => {
                 <label className='form-label'>Password:</label>
                 <input type="text" name="password" className='form-control' onChange={onChangeHandler} value={userLogin.password}/>
 
-                <button className='btn btn-dark border mt-3'>Login</button>
+                <button className='btn btn-secondary btn-outline-dark text-dark'>Login</button>
                 <br/>
-                <Link className='text-white' to={'/'}>Dont have an account? Sign up here</Link>
+                <Link className='text-white btn btn-dark btn-outline-dark' to={'/'}>Dont have an account? Sign up here</Link>
 
 
             </form> 

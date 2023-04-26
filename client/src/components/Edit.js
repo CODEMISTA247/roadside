@@ -39,7 +39,7 @@ const UpdateCustomer = (props) => {
         })
             .then(res => {
                 console.log(res);
-                navigate("/")
+                navigate("/dashboard")
             })
             .catch(err => {
                 console.log(err);
@@ -50,12 +50,12 @@ const UpdateCustomer = (props) => {
 
 
     return (
-        <div className='d-block justify-content-evenly '>
+        <div className='bg-img d-block justify-content-evenly '>
         
-            <h2 className='p-3 text-light  w-50 text-bg-secondary border-5 border-light rounded-3'>Edit {customerName}'s Service</h2>
+            <h2 className='text-light text-bg-dark w-50  p-0 '>Edit {customerName}'s Service</h2>
             
             <form className='border-5 m-auto w-50 row g-2 text-light rounded-3 user-form' onSubmit={updateCustomer}>
-                <label className='form-label text-bg-secondary text-light w-50'>Name:</label>
+                <label className='form-label text-bg-dark text-light w-50'>Name:</label>
                 <input className='form-control' type='text' value={customerName} name='customerName' onChange={(e) =>{ 
                     setCustomerName(e.target.value)}}/>
 
@@ -65,7 +65,7 @@ const UpdateCustomer = (props) => {
                     null
                 }
 
-                <label className='form-label text-bg-secondary text-light w-50 rounded-3'>Location:</label>
+                <label className='form-label text-bg-dark text-light w-50 rounded-3'>Location:</label>
                 <input className='form-control ' type='text' value={location} name='location' onChange={(e) => {
                     setLocation(e.target.value)}}/>
 
@@ -75,7 +75,7 @@ const UpdateCustomer = (props) => {
                         null 
                     }
 
-                <label className='form-label text-bg-secondary text-light w-50 rounded-3'>What's Going On?</label>
+                <label className='form-label text-bg-dark text-light w-50 rounded-3'>What's Going On?</label>
                 <input className='form-control' type='text' value={description} name='description' onChange={(e) => {
                     setDescription(e.target.value)}}/>
 
@@ -86,7 +86,7 @@ const UpdateCustomer = (props) => {
                     }
 
 
-                    <label className='form-label text-bg-secondary text-light w-50 rounded-3'>Service Type:</label>
+                    <label className='form-label text-bg-dark text-light w-50 rounded-3'>Service Type:</label>
                     <select className="form-select" name="typeService" onChange={(e) => {setTypeService(e.target.value)}}>
                         <option value="Jumpstart">Jumpstart</option>
                         <option value="Vehicle Lockout">Vehicle Lockout</option>
@@ -106,7 +106,7 @@ const UpdateCustomer = (props) => {
                         null
                     }
 
-                <label className='form-label text-bg-secondary text-light w-50 rounded-3'>Contact Information:</label>
+                <label className='form-label text-bg-dark text-light w-50 rounded-3'>Contact Information:</label>
                 <input className='form-control' type='number' value={phoneNumber} name='phoneNumber' onChange={(e) => {
                     setPhoneNumber(e.target.value)}}/>
 
@@ -117,11 +117,11 @@ const UpdateCustomer = (props) => {
                     }
                 
 
-                <div>
+                <div className=' justify-content-between w-75  d-flex  '>
                 
-                    <button className='btn btn-danger'>Edit Service</button>
-                    --
-                    <Link to={'/'}  className='btn btn-danger'>Go Home</Link>
+                    <button className='btn btn-secondary btn-outline-dark'>Edit Service</button>
+                
+                    <Link to={'/dashboard'}  className=' btn btn-secondary btn-outline-dark'>Go Home</Link>
                     
                 </div>
                 

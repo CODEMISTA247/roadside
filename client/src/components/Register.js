@@ -30,8 +30,8 @@ const Register = (props) => {
     }
 
     return (
-        <div className=''>
-            <h1 className='text-white'>Register!</h1>
+        <div className='bg-img'>
+            <h1 className='text-white title'>Become a member: </h1>
             <form onSubmit={submitHandler} className='col-4 mx-auto user-form mt-5'>
                 <label className='form-label'>First Name:</label>
                 <input type="text" name="firstName" className='form-control' onChange={onChangeHandler} value={userReg.firstName}/>
@@ -48,9 +48,9 @@ const Register = (props) => {
                 <label className='form-label'>Confirm Password:</label>
                 <input type="text" name="confirmPassword" className='form-control' onChange={onChangeHandler} value={userReg.confirmPassword}/>
 
-                <button className='btn btn-dark border mt-3'>Register</button>
+                <button className='btn btn-secondary btn-outline-dark text-dark'>Register</button>
                 <br />
-                <Link className='text-dark' to={'/login'}>Already have an account? Login here</Link>
+                <Link className='btn btn-dark btn-outline-dark text-light' to={'/login'}>Already have an account? Login here</Link>
             </form>
         </div>
     )

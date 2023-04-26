@@ -14,6 +14,7 @@ const CustomerForm = (props) => {
         description: '', 
         typeService: 'Jumpstart',
         phoneNumber: 18000000000,
+        completed: false
     }) 
 
 
@@ -21,6 +22,12 @@ const CustomerForm = (props) => {
         console.log(e.target.name);
         console.log(e.target.value);
         setCustomer({...customer, [e.target.name]: e.target.value})
+/*         if(e.target.name === 'completed'){
+            console.log('HERE');
+            setCustomer({...customer, completed: !customer.completed})
+        }else{
+            setCustomer({...customer, [e.target.name]: e.target.value})
+        } */
     }
 
     const submitHandler = (e) => {
@@ -41,13 +48,13 @@ const CustomerForm = (props) => {
 
 
     return (
-        <div className='d-block justify-content-evenly'>
+        <div className='bg-img d-block justify-content-evenly'>
 
         
-        <h2 className='p-3 text-light  w-50 text-bg-secondary border-5 border-light rounded-3'>Need Roadside Assistance? <img style={{width:'80px', borderRadius:'30px'}} src={logo} alt="This Logo"/> </h2>
+        <h2 className='text-light text-bg-dark w-50  p-0 '>Need Roadside Assistance? <img style={{width:'80px', borderRadius:'30px'}} src={logo} alt="This Logo"/> </h2>
 
-        <form className='border-5 m-auto w-50 row g-2 text-light rounded-3 user-form' onSubmit={submitHandler}>
-            <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>Name:</label>
+        <form className=' border-5 m-auto w-50 row g-2 text-light rounded-3 user-form' onSubmit={submitHandler}>
+            <label className='form-label form-label b text-bg-dark text-light w-50 rounded-3'>Name:</label>
             <input className='form-control' type='text' value={customer.customerName} name='customerName' onChange={handleChange}/>
 
             {
@@ -56,7 +63,7 @@ const CustomerForm = (props) => {
                 null
             }
 
-            <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>Location:</label>
+            <label className='form-label form-label text-bg-dark text-light w-50 rounded-3'>Location:</label>
             <input className='form-control' type='text' value={customer.location} name='location' onChange={handleChange}/>
 
             {
@@ -65,7 +72,7 @@ const CustomerForm = (props) => {
                 null
             }
 
-            <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>What's going on?</label>
+            <label className='form-label form-label text-bg-dark text-light w-50 rounded-3'>What's going on?</label>
             <input className='form-control' type='text' value={customer.description} name='description' onChange={handleChange}/>
 
             {
@@ -74,7 +81,7 @@ const CustomerForm = (props) => {
                 null
             }
 
-            <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>Type of Service:</label>
+            <label className='form-label form-label text-bg-dark text-light w-50 rounded-3'>Type of Service:</label>
             <select className="form-select" name="typeService" onChange={handleChange} value={customer.typeService}>
                 <option value="Jumpstart">Jumpstart</option>
                 <option value="Vehicle Lockout">Vehicle lockout</option>
@@ -90,7 +97,7 @@ const CustomerForm = (props) => {
                 <p className='text-warning'>{errors.typeService.message}</p>:
                 null
             }
-            <label className='form-label form-label text-bg-secondary text-light w-50 rounded-3'>Contact Information:</label>
+            <label className='form-label form-label text-bg-dark text-light w-50 rounded-3'>Contact Information:</label>
             <input className='form-control' type='number' value={customer.phoneNumber} name='phoneNumber' onChange={handleChange}/>
 
             {
@@ -98,11 +105,20 @@ const CustomerForm = (props) => {
                 <p className='text-warning'>{errors.phoneNumber.message}</p>:
                 null
             }
+
+{/*             <label className='form-label me-3'>Completed</label>
+            <input className='form-check-input' type='checkbox' name='completed' onChange={handleChange} value={customer.completed} />
+
+            {
+                errors.completed?
+                <p className='btn btn-primary'>{errors.completed.message}</p>:
+                null
+            } */}
             <br/>
-            <div>
-                <button className='btn btn-danger'>Submit</button> 
-                --
-                <Link to={'/'} className='btn btn-danger'>Go Home</Link>
+            <div className='justify-content-between w-75  d-flex'>
+                <button className='btn btn-secondary btn-outline-dark'>Submit</button> 
+                
+                <Link to={'/dashboard'} className='btn btn-secondary btn-outline-dark'>Go Home</Link>
             </div>
         
         </form> 

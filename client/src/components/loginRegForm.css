@@ -1,9 +1,88 @@
 .user-form{
-    background-color: rgba(128, 128, 128, .5);
+    background-color: rgba(10, 9, 9, 0.5);
     padding: 20px;
     color: white;
     border-radius: 20px;
     -webkit-box-shadow: 30px 30px 25px 2px rgba(0,0,0,0.75);
     -moz-box-shadow: 30px 30px 25px 2px rgba(0,0,0,0.75);
     box-shadow: 30px 30px 25px 2px rgba(0,0,0,0.75);
+
 }
+
+.footer{
+    bottom: 0;
+    padding: 10px;
+    position: relative;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    overflow-y: scroll; /* Add a vertical scrollbar */
+    border: 1px solid #ccc; /* Add a border 
+    box-shadow: 0 0 10px rgba(0,0,0, 0.1);
+    opacity: 0.7;
+    justify-content: center; /* Center the container horizontally */
+    justify-content: center;
+    
+
+}
+
+
+.card {
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(10, 9, 9, 0.5);
+    /* border: 1px solid #ccc; */
+    transition: box-shadow 0.3s ease; /* Add a transition effect */
+    width: fit-content;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    position: absolute;
+    width: fit-content;
+}
+
+/* //Display all customers */
+.header{
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-shadow: 30px;
+}
+
+.completed-card{
+    justify-content: center;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+

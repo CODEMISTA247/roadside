@@ -1,13 +1,15 @@
 .App {
   text-align: auto;
-  /* margin-bottom: auto; */
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-image: url(/src/components/images/SLIDE3.jpeg);
+  margin-bottom: auto;
+/*   background-size: cover;
   background-repeat: no-repeat;
-  background-size: cover;
+  margin-bottom: auto;
+  background-image: url(/src/components/images/SLIDE3.jpeg);
+  background-attachment: fixed;
+  height: 100vh; */
 }
+
+
 
 
 

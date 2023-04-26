@@ -10,6 +10,7 @@ import InstagramButton from './components/InstagramLink';
 import addNotification from 'react-push-notification';
 import Register from './components/Register';
 import Login from './components/Login';
+import Footer from './components/footer'
 /* import PushNotification from './components/PushNotification'; */
 
 
@@ -44,11 +45,8 @@ function App() {
     <Route path='/oneCustomer/:id' element={<OneCustomer />} />
     <Route path='/updateCustomer/:id' element={<UpdateCustomer />} />
   </Routes>
-    <br />
-    <InstagramButton />
-      <button onClick={clickTONotify}>
-      Click to notify
-      </button>
+    <Footer/>
+      
     {/* <PushNotification /> */}
     
 
