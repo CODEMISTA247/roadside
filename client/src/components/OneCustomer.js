@@ -33,12 +33,13 @@ const OneCustomer = (props) => {
         <hr /> 
         
         <h6 className="card-subtitle mb-2 text-light">Service Requested: {customer.typeService}</h6>
+
         <p className="card-text">Description: {customer.description}</p>
         <p className="card-text">Contact Information: {customer.phoneNumber}</p>
 
         <div className='justify-content-between w-75  d-flex '>
         <button onClick={deleteCustomer} className="btn btn-danger btn-outline-light text-dark">Cancel </button>
-        <Link to={'/'}  className='btn btn-secondary btn btn-secondary btn-outline-dark'> Home </Link>
+        <Link to={'/dashboard'}  className='btn btn-secondary btn btn-secondary btn-outline-dark'> Home </Link>
         </div>
 
     </div>
