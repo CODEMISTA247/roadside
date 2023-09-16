@@ -6,7 +6,6 @@ import DisplayAllCustomers from './components/DisplayAllCustomers';
 import Nav from './components/Nav';
 import OneCustomer from './components/OneCustomer';
 import UpdateCustomer from './components/Edit';
-import InstagramButton from './components/InstagramLink';
 import Register from './components/Register';
 import Login from './components/Login';
 import Footer from './components/footer'
@@ -17,15 +16,7 @@ import Footer from './components/footer'
 
 
 function App() {
-  const clickTONotify = () => {
-    addNotification({
-        title: 'Test This Notification',
-        message: 'You have a new service',
-        duration: 5000,
-        native: true,
-        onClick: ()=> console.log('Push Notification'),
-    });
-}
+
 
   const [allCustomers, setAllCustomers] = useState([]) 
   return (
