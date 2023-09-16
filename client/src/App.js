@@ -7,7 +7,6 @@ import Nav from './components/Nav';
 import OneCustomer from './components/OneCustomer';
 import UpdateCustomer from './components/Edit';
 import InstagramButton from './components/InstagramLink';
-import addNotification from 'react-push-notification';
 import Register from './components/Register';
 import Login from './components/Login';
 import Footer from './components/footer'
