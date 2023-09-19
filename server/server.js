@@ -2,7 +2,7 @@ const port = 8000;
 const express = require("express");
 const app = express();
 const cors = require('cors')
-const cookieParser = require('cookie-Parser')
+const cookieParser = require('cookie-parser')
 require("./config/mongoose.config");
 require('dotenv').config()
 app.use(cors({credentials:true, origin:'http://localhost:3000'}));
